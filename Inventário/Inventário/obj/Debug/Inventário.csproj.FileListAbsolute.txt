@@ -1,0 +1,5 @@
+C:\Users\Katia Regina\source\repos\Inventário\Inventário\obj\Debug\Inventário.csproj.AssemblyReference.cache
+C:\Users\Katia Regina\source\repos\Inventário\Inventário\obj\Debug\Inventário.dgInventario.resources
+C:\Users\Katia Regina\source\repos\Inventário\Inventário\obj\Debug\Inventário.Properties.Resources.resources
+C:\Users\Katia Regina\source\repos\Inventário\Inventário\obj\Debug\Inventário.csproj.GenerateResource.cache
+C:\Users\Katia Regina\source\repos\Inventário\Inventário\obj\Debug\Inventário.csproj.CoreCompileInputs.cache
