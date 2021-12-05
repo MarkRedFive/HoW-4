@@ -1,7 +1,7 @@
 ﻿
 namespace Inventário
 {
-    partial class dgvItem
+    partial class inventario
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -29,16 +29,17 @@ namespace Inventário
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dgvItem));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(inventario));
             this.btAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.verColdreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verMochilaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verAlgibeiraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verTodosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbID = new System.Windows.Forms.TextBox();
+            this.dgvItem = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,38 +47,40 @@ namespace Inventário
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tbTipo = new System.Windows.Forms.TextBox();
+            this.tbLocal = new System.Windows.Forms.TextBox();
+            this.tbPeso = new System.Windows.Forms.TextBox();
+            this.tbNome = new System.Windows.Forms.TextBox();
+            this.tbQuantidade = new System.Windows.Forms.TextBox();
+            this.tbValor = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tbDescricao = new System.Windows.Forms.TextBox();
             this.btAlterar = new System.Windows.Forms.Button();
             this.btDelete = new System.Windows.Forms.Button();
             this.btLimpar = new System.Windows.Forms.Button();
             this.btDrop = new System.Windows.Forms.Button();
-            this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnQuant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPeso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLocal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.verTodosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.tbLocalExtra1 = new System.Windows.Forms.TextBox();
+            this.tbLocalExtra2 = new System.Windows.Forms.TextBox();
+            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPeso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColLocal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.ver4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ver5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).BeginInit();
             this.SuspendLayout();
             // 
             // btAdd
@@ -86,10 +89,11 @@ namespace Inventário
             this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btAdd.Location = new System.Drawing.Point(8, 102);
             this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(167, 47);
+            this.btAdd.Size = new System.Drawing.Size(136, 47);
             this.btAdd.TabIndex = 0;
             this.btAdd.Text = "Adicionar ao Inventário";
             this.btAdd.UseVisualStyleBackColor = false;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // label1
             // 
@@ -103,65 +107,78 @@ namespace Inventário
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verColdreToolStripMenuItem,
+            this.verTodosToolStripMenuItem,
             this.verMochilaToolStripMenuItem,
             this.verAlgibeiraToolStripMenuItem,
-            this.verTodosToolStripMenuItem,
-            this.verTodosToolStripMenuItem1});
+            this.verColdreToolStripMenuItem,
+            this.verTodosToolStripMenuItem1,
+            this.ver4ToolStripMenuItem,
+            this.ver5ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(879, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(310, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(104, 20);
-            this.textBox1.TabIndex = 3;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnID,
-            this.ColumnNome,
-            this.ColumnTipo,
-            this.ColumnQuant,
-            this.ColumnPeso,
-            this.ColumnValor,
-            this.ColumnDesc,
-            this.ColumnLocal});
-            this.dataGridView1.Location = new System.Drawing.Point(8, 155);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(859, 249);
-            this.dataGridView1.TabIndex = 4;
-            // 
             // verColdreToolStripMenuItem
             // 
             this.verColdreToolStripMenuItem.Name = "verColdreToolStripMenuItem";
             this.verColdreToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.verColdreToolStripMenuItem.Text = "Ver coldre";
+            this.verColdreToolStripMenuItem.Click += new System.EventHandler(this.verColdreToolStripMenuItem_Click);
             // 
             // verMochilaToolStripMenuItem
             // 
             this.verMochilaToolStripMenuItem.Name = "verMochilaToolStripMenuItem";
             this.verMochilaToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.verMochilaToolStripMenuItem.Text = "Ver mochila";
+            this.verMochilaToolStripMenuItem.Click += new System.EventHandler(this.verMochilaToolStripMenuItem_Click);
             // 
             // verAlgibeiraToolStripMenuItem
             // 
             this.verAlgibeiraToolStripMenuItem.Name = "verAlgibeiraToolStripMenuItem";
             this.verAlgibeiraToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.verAlgibeiraToolStripMenuItem.Text = "Ver algibeira";
+            this.verAlgibeiraToolStripMenuItem.Click += new System.EventHandler(this.verAlgibeiraToolStripMenuItem_Click);
             // 
             // verTodosToolStripMenuItem
             // 
             this.verTodosToolStripMenuItem.Name = "verTodosToolStripMenuItem";
             this.verTodosToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.verTodosToolStripMenuItem.Text = "Ver chão";
+            this.verTodosToolStripMenuItem.Click += new System.EventHandler(this.verTodosToolStripMenuItem_Click);
+            // 
+            // verTodosToolStripMenuItem1
+            // 
+            this.verTodosToolStripMenuItem1.Name = "verTodosToolStripMenuItem1";
+            this.verTodosToolStripMenuItem1.Size = new System.Drawing.Size(69, 20);
+            this.verTodosToolStripMenuItem1.Text = "Ver todos";
+            this.verTodosToolStripMenuItem1.Click += new System.EventHandler(this.verTodosToolStripMenuItem1_Click);
+            // 
+            // tbID
+            // 
+            this.tbID.Enabled = false;
+            this.tbID.Location = new System.Drawing.Point(310, 53);
+            this.tbID.Name = "tbID";
+            this.tbID.Size = new System.Drawing.Size(104, 20);
+            this.tbID.TabIndex = 3;
+            // 
+            // dgvItem
+            // 
+            this.dgvItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColID,
+            this.ColNome,
+            this.ColTipo,
+            this.ColQuantidade,
+            this.ColPeso,
+            this.ColValor,
+            this.ColDescricao,
+            this.ColLocal});
+            this.dgvItem.Location = new System.Drawing.Point(8, 155);
+            this.dgvItem.Name = "dgvItem";
+            this.dgvItem.Size = new System.Drawing.Size(859, 249);
+            this.dgvItem.TabIndex = 4;
             // 
             // label2
             // 
@@ -226,47 +243,47 @@ namespace Inventário
             this.label8.TabIndex = 11;
             this.label8.Text = "Descrição:";
             // 
-            // textBox2
+            // tbTipo
             // 
-            this.textBox2.Location = new System.Drawing.Point(44, 53);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 12;
+            this.tbTipo.Location = new System.Drawing.Point(44, 53);
+            this.tbTipo.Name = "tbTipo";
+            this.tbTipo.Size = new System.Drawing.Size(100, 20);
+            this.tbTipo.TabIndex = 12;
             // 
-            // textBox3
+            // tbLocal
             // 
-            this.textBox3.Location = new System.Drawing.Point(44, 76);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 13;
+            this.tbLocal.Location = new System.Drawing.Point(44, 76);
+            this.tbLocal.Name = "tbLocal";
+            this.tbLocal.Size = new System.Drawing.Size(100, 20);
+            this.tbLocal.TabIndex = 13;
             // 
-            // textBox4
+            // tbPeso
             // 
-            this.textBox4.Location = new System.Drawing.Point(187, 53);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(94, 20);
-            this.textBox4.TabIndex = 14;
+            this.tbPeso.Location = new System.Drawing.Point(187, 53);
+            this.tbPeso.Name = "tbPeso";
+            this.tbPeso.Size = new System.Drawing.Size(94, 20);
+            this.tbPeso.TabIndex = 14;
             // 
-            // textBox5
+            // tbNome
             // 
-            this.textBox5.Location = new System.Drawing.Point(44, 30);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(306, 20);
-            this.textBox5.TabIndex = 15;
+            this.tbNome.Location = new System.Drawing.Point(44, 30);
+            this.tbNome.Name = "tbNome";
+            this.tbNome.Size = new System.Drawing.Size(306, 20);
+            this.tbNome.TabIndex = 15;
             // 
-            // textBox6
+            // tbQuantidade
             // 
-            this.textBox6.Location = new System.Drawing.Point(218, 76);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(63, 20);
-            this.textBox6.TabIndex = 16;
+            this.tbQuantidade.Location = new System.Drawing.Point(218, 76);
+            this.tbQuantidade.Name = "tbQuantidade";
+            this.tbQuantidade.Size = new System.Drawing.Size(63, 20);
+            this.tbQuantidade.TabIndex = 16;
             // 
-            // textBox7
+            // tbValor
             // 
-            this.textBox7.Location = new System.Drawing.Point(321, 76);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(93, 20);
-            this.textBox7.TabIndex = 17;
+            this.tbValor.Location = new System.Drawing.Point(321, 76);
+            this.tbValor.Name = "tbValor";
+            this.tbValor.Size = new System.Drawing.Size(93, 20);
+            this.tbValor.TabIndex = 17;
             // 
             // label9
             // 
@@ -288,105 +305,62 @@ namespace Inventário
             this.label10.TabIndex = 19;
             this.label10.Text = "PO";
             // 
-            // textBox8
+            // tbDescricao
             // 
-            this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(420, 30);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(447, 66);
-            this.textBox8.TabIndex = 20;
+            this.tbDescricao.Enabled = false;
+            this.tbDescricao.Location = new System.Drawing.Point(420, 30);
+            this.tbDescricao.Multiline = true;
+            this.tbDescricao.Name = "tbDescricao";
+            this.tbDescricao.Size = new System.Drawing.Size(447, 66);
+            this.tbDescricao.TabIndex = 20;
             // 
             // btAlterar
             // 
             this.btAlterar.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btAlterar.Location = new System.Drawing.Point(181, 102);
+            this.btAlterar.Location = new System.Drawing.Point(150, 102);
             this.btAlterar.Name = "btAlterar";
-            this.btAlterar.Size = new System.Drawing.Size(167, 47);
+            this.btAlterar.Size = new System.Drawing.Size(136, 47);
             this.btAlterar.TabIndex = 21;
             this.btAlterar.Text = "Alterar o Inventário";
             this.btAlterar.UseVisualStyleBackColor = false;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // btDelete
             // 
             this.btDelete.BackColor = System.Drawing.Color.Firebrick;
             this.btDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btDelete.Location = new System.Drawing.Point(354, 102);
+            this.btDelete.Location = new System.Drawing.Point(292, 102);
             this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(167, 47);
+            this.btDelete.Size = new System.Drawing.Size(136, 47);
             this.btDelete.TabIndex = 22;
             this.btDelete.Text = "Quebrar";
             this.btDelete.UseVisualStyleBackColor = false;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // btLimpar
             // 
             this.btLimpar.BackColor = System.Drawing.Color.Khaki;
             this.btLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btLimpar.Location = new System.Drawing.Point(593, 102);
+            this.btLimpar.Location = new System.Drawing.Point(566, 102);
             this.btLimpar.Name = "btLimpar";
-            this.btLimpar.Size = new System.Drawing.Size(67, 47);
+            this.btLimpar.Size = new System.Drawing.Size(94, 47);
             this.btLimpar.TabIndex = 23;
             this.btLimpar.Text = "Limpar Campos";
             this.btLimpar.UseVisualStyleBackColor = false;
+            this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
             // 
             // btDrop
             // 
             this.btDrop.BackColor = System.Drawing.Color.Fuchsia;
             this.btDrop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btDrop.Location = new System.Drawing.Point(527, 102);
+            this.btDrop.Location = new System.Drawing.Point(500, 102);
             this.btDrop.Name = "btDrop";
             this.btDrop.Size = new System.Drawing.Size(60, 47);
             this.btDrop.TabIndex = 24;
             this.btDrop.Text = "Jogar no Chão";
             this.btDrop.UseVisualStyleBackColor = false;
-            // 
-            // ColumnID
-            // 
-            this.ColumnID.HeaderText = "ID";
-            this.ColumnID.Name = "ColumnID";
-            this.ColumnID.Visible = false;
-            // 
-            // ColumnNome
-            // 
-            this.ColumnNome.HeaderText = "Nome";
-            this.ColumnNome.Name = "ColumnNome";
-            this.ColumnNome.Width = 150;
-            // 
-            // ColumnTipo
-            // 
-            this.ColumnTipo.HeaderText = "Tipo";
-            this.ColumnTipo.Name = "ColumnTipo";
-            // 
-            // ColumnQuant
-            // 
-            this.ColumnQuant.HeaderText = "Quant";
-            this.ColumnQuant.Name = "ColumnQuant";
-            this.ColumnQuant.Width = 40;
-            // 
-            // ColumnPeso
-            // 
-            this.ColumnPeso.HeaderText = "Peso";
-            this.ColumnPeso.Name = "ColumnPeso";
-            this.ColumnPeso.Width = 40;
-            // 
-            // ColumnValor
-            // 
-            this.ColumnValor.HeaderText = "Valor";
-            this.ColumnValor.Name = "ColumnValor";
-            this.ColumnValor.Width = 60;
-            // 
-            // ColumnDesc
-            // 
-            this.ColumnDesc.HeaderText = "Descrição";
-            this.ColumnDesc.Name = "ColumnDesc";
-            this.ColumnDesc.Width = 350;
-            // 
-            // ColumnLocal
-            // 
-            this.ColumnLocal.HeaderText = "Local";
-            this.ColumnLocal.Name = "ColumnLocal";
-            this.ColumnLocal.Width = 75;
+            this.btDrop.Click += new System.EventHandler(this.btDrop_Click);
             // 
             // label11
             // 
@@ -424,12 +398,6 @@ namespace Inventário
             this.label14.TabIndex = 28;
             this.label14.Text = "3 =   COLDRE";
             // 
-            // verTodosToolStripMenuItem1
-            // 
-            this.verTodosToolStripMenuItem1.Name = "verTodosToolStripMenuItem1";
-            this.verTodosToolStripMenuItem1.Size = new System.Drawing.Size(69, 20);
-            this.verTodosToolStripMenuItem1.Text = "Ver todos";
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -448,27 +416,101 @@ namespace Inventário
             this.label16.TabIndex = 29;
             this.label16.Text = "4 =";
             // 
-            // textBox9
+            // tbLocalExtra1
             // 
-            this.textBox9.Location = new System.Drawing.Point(689, 133);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(72, 20);
-            this.textBox9.TabIndex = 31;
+            this.tbLocalExtra1.Location = new System.Drawing.Point(689, 133);
+            this.tbLocalExtra1.Name = "tbLocalExtra1";
+            this.tbLocalExtra1.Size = new System.Drawing.Size(72, 20);
+            this.tbLocalExtra1.TabIndex = 31;
             // 
-            // textBox10
+            // tbLocalExtra2
             // 
-            this.textBox10.Location = new System.Drawing.Point(792, 133);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(72, 20);
-            this.textBox10.TabIndex = 32;
+            this.tbLocalExtra2.Location = new System.Drawing.Point(792, 133);
+            this.tbLocalExtra2.Name = "tbLocalExtra2";
+            this.tbLocalExtra2.Size = new System.Drawing.Size(72, 20);
+            this.tbLocalExtra2.TabIndex = 32;
             // 
-            // dgvItem
+            // ColID
+            // 
+            this.ColID.HeaderText = "ID";
+            this.ColID.Name = "ColID";
+            this.ColID.Visible = false;
+            // 
+            // ColNome
+            // 
+            this.ColNome.HeaderText = "Nome";
+            this.ColNome.Name = "ColNome";
+            this.ColNome.Width = 150;
+            // 
+            // ColTipo
+            // 
+            this.ColTipo.HeaderText = "Tipo";
+            this.ColTipo.Name = "ColTipo";
+            // 
+            // ColQuantidade
+            // 
+            this.ColQuantidade.HeaderText = "Quant";
+            this.ColQuantidade.Name = "ColQuantidade";
+            this.ColQuantidade.Width = 40;
+            // 
+            // ColPeso
+            // 
+            this.ColPeso.HeaderText = "Peso";
+            this.ColPeso.Name = "ColPeso";
+            this.ColPeso.Width = 40;
+            // 
+            // ColValor
+            // 
+            this.ColValor.HeaderText = "Valor";
+            this.ColValor.Name = "ColValor";
+            this.ColValor.Width = 60;
+            // 
+            // ColDescricao
+            // 
+            this.ColDescricao.HeaderText = "Descrição";
+            this.ColDescricao.Name = "ColDescricao";
+            this.ColDescricao.Width = 350;
+            // 
+            // ColLocal
+            // 
+            this.ColLocal.HeaderText = "Local";
+            this.ColLocal.Name = "ColLocal";
+            this.ColLocal.Width = 75;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MediumPurple;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(434, 102);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(60, 47);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "Pegar do Chão";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // ver4ToolStripMenuItem
+            // 
+            this.ver4ToolStripMenuItem.Name = "ver4ToolStripMenuItem";
+            this.ver4ToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.ver4ToolStripMenuItem.Text = "Ver 4";
+            this.ver4ToolStripMenuItem.Click += new System.EventHandler(this.ver4ToolStripMenuItem_Click);
+            // 
+            // ver5ToolStripMenuItem
+            // 
+            this.ver5ToolStripMenuItem.Name = "ver5ToolStripMenuItem";
+            this.ver5ToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.ver5ToolStripMenuItem.Text = "Ver 5";
+            this.ver5ToolStripMenuItem.Click += new System.EventHandler(this.ver5ToolStripMenuItem_Click);
+            // 
+            // inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 450);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
+            this.ClientSize = new System.Drawing.Size(879, 414);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.tbLocalExtra2);
+            this.Controls.Add(this.tbLocalExtra1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label14);
@@ -479,15 +521,15 @@ namespace Inventário
             this.Controls.Add(this.btLimpar);
             this.Controls.Add(this.btDelete);
             this.Controls.Add(this.btAlterar);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.tbDescricao);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbValor);
+            this.Controls.Add(this.tbQuantidade);
+            this.Controls.Add(this.tbNome);
+            this.Controls.Add(this.tbPeso);
+            this.Controls.Add(this.tbLocal);
+            this.Controls.Add(this.tbTipo);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -495,19 +537,19 @@ namespace Inventário
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dgvItem);
+            this.Controls.Add(this.tbID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "dgvItem";
+            this.Name = "inventario";
             this.Text = "Tabela de Inventário";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -522,16 +564,8 @@ namespace Inventário
         private System.Windows.Forms.ToolStripMenuItem verMochilaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verAlgibeiraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verTodosToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnQuant;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPeso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnValor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDesc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLocal;
+        private System.Windows.Forms.TextBox tbID;
+        private System.Windows.Forms.DataGridView dgvItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -539,15 +573,15 @@ namespace Inventário
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tbTipo;
+        private System.Windows.Forms.TextBox tbLocal;
+        private System.Windows.Forms.TextBox tbPeso;
+        private System.Windows.Forms.TextBox tbNome;
+        private System.Windows.Forms.TextBox tbQuantidade;
+        private System.Windows.Forms.TextBox tbValor;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox tbDescricao;
         private System.Windows.Forms.Button btAlterar;
         private System.Windows.Forms.Button btDelete;
         private System.Windows.Forms.Button btLimpar;
@@ -559,8 +593,19 @@ namespace Inventário
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox tbLocalExtra1;
+        private System.Windows.Forms.TextBox tbLocalExtra2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColQuantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColPeso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColValor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColDescricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColLocal;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem ver4ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ver5ToolStripMenuItem;
     }
 }
 
